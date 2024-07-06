@@ -1,0 +1,244 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - I am amazing
+      - I am going to save the world
+      - super stoked
+      - extremely good
+      - so so perfect
+      - so good
+      - so perfect
+
+  - intent: mood_unhappy
+    examples: |
+      - my day was horrible
+      - I am sad
+      - I don't feel very well
+      - I am disappointed
+      - super sad
+      - I'm so sad
+      - sad
+      - very sad
+      - unhappy
+      - not good
+      - not very good
+      - extremly sad
+      - so saad
+      - so sad
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+
+  - intent: ask_financial_info
+    examples: |
+      - What is the [profit](metric) in [2023](year)?
+      - Tell me about [large enterprise](submetric) [revenue](metric) in [2024](year)
+      - What was the [cash](metric) situation in [Q2](quarter) [2023](year)?
+      - How much [debt](metric) did we have in [2024](year)?
+      - What were our [earnings](metric) for [2023](year)?
+      - Can you give me the [wholesale](submetric) [income](metric) for [Q3](quarter) [2024](year)?
+      - What was the [public sector](submetric) [revenue](metric) in [2023](year)?
+      - Tell me about [mid market enterprise](submetric) [revenue](metric) for all quarters in [2024](year)
+      - What was our [EBITDA](metric) for [2023](year)?
+      - How did the [business segment](submetric) perform in terms of [revenue](metric) in [Q1](quarter) [2024](year)?
+      - What was the [mass markets segment](submetric) [revenue](metric) for [2023](year)?
+      - What is the [net profit](metric) for [Q1](quarter) [2023](year)?
+      - What was the [net profit](metric) of [2023](year)?
+      - I'm interested in the [net profit](metric) of [Q1](quarter) [2024](year). Can you help?
+      - I'm interested in the [net profit](metric) of [2024](year). Can you help?
+      - Can you tell me the [net profit](metric) for [Q2](quarter) [2023](year)?
+      - Can you tell me the [net profit](metric) for [2024](year)?
+      - What was the [net profit](metric) for [Q3](quarter) [2023](year)?
+      - What was the [net profit](metric) for [2024](year)?
+      - How much [net profit](metric) was generated in [Q4](quarter) [2023](year)?
+      - How much [net profit](metric) was generated in [2024](year)?  
+      - Can you tell me the [EBITA](metric) for [Q2](quarter) [2023](year)?
+      - Can you tell me the [EBITA](metric) for [2024](year)?
+      - What was the [EBITA](metric) for [Q3](quarter) [2023](year)?
+      - What was the [EBITA](metric) for [2024](year)?
+      - How much [EBITA](metric) was generated in [Q4](quarter) [2023](year)?
+      - How much [EBITA](metric) was generated in [2024](year)?
+      - How much was the [available cash](metric) in [Q3](quarter) [2023](year)?
+      - How much was the [available cash](metric) in [2024](year)?
+      - What was the [available cash](metric) for [Q4](quarter) [2023](year)?
+      - What was the [available cash](metric) for [2024](year)?
+      - Can you tell me the [available cash](metric) for [Q2](quarter) [2023](year)?
+      - Can you tell me the [available cash](metric) for [2024](year)?
+      - How much [available cash](metric) was generated in [Q1](quarter) [2023](year)?
+      - How much [available cash](metric) was generated in [2024](year)?
+      - What was the [available cash](metric) for [Q3](quarter) [2023](year)?
+      - What was the [available cash](metric) for [2024](year)?
+      - What is the [revenue](metric) for [Q4](quarter) [2023](year)?
+      - What is the [revenue](metric) for [2024](year)?
+      - How much [revenue](metric) was generated in [Q3](quarter) [2023](year)?
+      - How much [revenue](metric) was generated in [2024](year)?
+      - Can you tell me the [revenue](metric) for [Q2](quarter) [2023](year)?
+      - Can you tell me the [revenue](metric) for [2024](year)?
+      - What was the [revenue](metric) for [Q1](quarter) [2023](year)?
+      - What was the [revenue](metric) for [2024](year)?
+      - How much [revenue](metric) was generated in [Q4](quarter) [2023](year)?
+      - What were the [financial results](metric) for [Q3](quarter) [2023](year)?
+      - What was the [revenue](metric) from [Large Enterprise](submetric) in [Q1](quarter) [2023](year)?
+      - Can you tell me the [revenue](metric) for [Mid Market Enterprise](submetric) in [Q4](quarter) [2023](year)?
+      - What was the [revenue](metric) for [Public Sector](submetric) in [Q2](quarter) [2024](year)?
+      - How much [revenue](metric) did [Wholesale](submetric) generate in [Q3](quarter) [2023](year)?
+      - What was the [revenue](metric) from [International and Other](submetric) sectors in [Q1](quarter) [2024](year)?
+      - Can you give me the [Business Segment Revenue](metric) for [Q4](quarter) [2023](year)?
+      - What was the [Mass Markets Segment Revenue](metric) in [Q2](quarter) [2024](year)?
+      - How much [revenue](metric) did the [Business Markets Segment](submetric) generate in [Q3](quarter) [2023](year)?
+      - What was the [revenue](metric) from the [Consumer Markets Segment](submetric) in [Q1](quarter) [2024](year)?
+      - Can you provide the [revenue](metric) for the [Wholesale Markets Segment](submetric) in [Q4](quarter) [2023](year)?
+      - What was the [revenue](metric) from the [International Markets Segment](submetric) in [Q2](quarter) [2024](year)?
+      - How much [revenue](metric) did the [Other Markets Segment](submetric) generate in [Q3](quarter) [2023](year)?
+      - What was the [revenue](metric) from the [Large Enterprise Segment](submetric) in [Q1](quarter) [2024](year)?
+      - Can you tell me the [revenue](metric) for the [Mid Market Enterprise Segment](submetric) in [Q4](quarter) [2023](year)?
+      - What was the [revenue](metric) for the [Public Sector Segment](submetric) in [Q2](quarter) [2024](year)?
+      - How much [revenue](metric) did the [Wholesale Segment](submetric) generate in [Q3](quarter) [2023](year)?
+      - What was the [revenue](metric) from the [International and Other Segment](submetric) in [Q1](quarter) [2024](year)?
+      - Can you give me the [Business Segment Revenue](metric) for [Q4](quarter) [2023](year)?
+      - What was the [Mass Markets Segment Revenue](metric) in [Q2](quarter) [2024](year)?
+      - How much [revenue](metric) did the [Business Markets Segment](submetric) generate in [Q3](quarter) [2023](year)?
+      - What was the [revenue](metric) from the [Consumer Markets Segment](submetric) in [Q1](quarter) [2024](year)?
+      - Give me the [financial results](metric) for [Q1](quarter) [2024](year).
+      - Could you provide the [financial summary](metric) for [Q1](quarter) [2023](year)?
+      - Could you provide the [financial summary](metric) for [2023](year)?     
+      - What was the revenue for [Large Enterprise](submetric) in [2023](year)?
+      - How much did [Mid Market Enterprise](submetric) contribute to revenue in [Q2](quarter) [2024](year)?
+      - Can you give me the [Wholesale](submetric) revenue for [2023](year)?
+      - Can you tell me the [EBITA](metric) for [2024](year)?
+      - What is the [revenue](metric) for [Wholesale](submetric) in [2023](year)?
+      - How much [revenue](metric) did [Large Enterprise](submetric) generate in [2023](year)?
+      - What was the total [revenue](metric) in [2024](year)?
+
+  - intent: inform
+    examples: |
+      - The quarter is [Q1](quarter)
+      - It's for the year [2020](year)
+      - The metric is [revenue](metric)
+      - [Q2](quarter)
+      - [2021](year)
+      - [profit](metric)
+      - [Q3](quarter)
+      - [2022](year)
+      - [EBITA](metric)
+      - [Q4](quarter)
+      - [2023](year)
+      - [net profit](metric)
+      - [available cash](metric)
+      - [net debt](metric)
+      - [Large Enterprise](submetric)
+      - [Mid Market Enterprise](submetric)
+      - [Public Sector](submetric)
+      - [Wholesale](submetric)
+      - [International and Other](submetric)
+      - [Business Segment Revenue](submetric)
+      - [Mass Markets Segment Revenue](submetric)
+
+entity_synonyms:
+  net profit:
+    - netprofit
+    - net profit
+    - profit
+  EBITA:
+    - EBITA
+    - ebitda
+    - EBITDA
+  available cash:
+    - availablecash
+    - cash
+    - available cash
+  net debt:
+    - netdebt
+    - debt
+    - net debt
+  revenue:
+    - revenue
+    - Large Enterprise
+    - Mid Market Enterprise
+    - Public Sector
+    - Wholesale
+    - International and Other
+    - Business Segment Revenue
+    - Mass Markets Segment Revenue
+    - Business Markets Segment
+    - Consumer Markets Segment
+    - Wholesale Markets Segment
+    - International Markets Segment
+    - Other Markets Segment
+    - Large Enterprise Segment
+    - Mid Market Enterprise Segment
+  financial results:
+    - financial summary
+  quarterly earnings:
+    - financial summary
+  financial summary:
+    - financial results
+
+regex_features:
+  - name: extract_year
+    pattern: "[0-9]{4}"
+  - name: extract_quarter
+    pattern: "(Q1|Q2|Q3|Q4)"
+  - name: extract_metric
+    pattern: "(net profit|EBITA|available cash|net debt|revenue|financial results|quarterly earnings|financial summary|Large Enterprise|Mid Market Enterprise|Public Sector|Wholesale|International and Other|Business Segment Revenue|Mass Markets Segment Revenue|Business Markets Segment|Consumer Markets Segment|Wholesale Markets Segment|International Markets Segment|Other Markets Segment|Large Enterprise Segment|Mid Market Enterprise Segment)"
