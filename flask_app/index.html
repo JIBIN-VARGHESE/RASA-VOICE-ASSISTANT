@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Voice Search Assistant</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      input {
+        width: 300px;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      p {
+        width: 300px;
+        text-align: center;
+        font-size: 18px;
+      }
+      .response {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        width: 300px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Voice Search Assistant</h1>
+    <button onclick="startRecognition()">Speak</button>
+    <input
+      id="inputText"
+      type="text"
+      placeholder="Your query will appear here"
+      readonly
+    />
+    <p id="response" class="response"></p>
+    <div id="followUp" class="response" style="display: none">
+      <input type="text" id="userInput" placeholder="Type your response here" />
+      <button onclick="sendFollowUp()">Send</button>
+    </div>
+    <script>
+      function startRecognition() {
+        const recognition = new (window.SpeechRecognition ||
+          window.webkitSpeechRecognition)();
+        recognition.lang = "en-US";
+        recognition.start();
+        recognition.onresult = function (event) {
+          const transcript = event.results[0][0].transcript;
+          document.getElementById("inputText").value = transcript;
+          fetch("/webhook", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ message: transcript }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              document.getElementById("response").innerText = data.response;
+              if (data.prompt) {
+                document.getElementById("followUp").style.display = "block";
+              } else {
+                document.getElementById("followUp").style.display = "none";
+              }
+            });
+        };
+      }
+
+      function sendFollowUp() {
+        const followUpText = document.getElementById("userInput").value;
+        fetch("/webhook", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ message: followUpText }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById("response").innerText = data.response;
+            document.getElementById("userInput").value = "";
+            document.getElementById("followUp").style.display = "none";
+          });
+      }
+    </script>
+  </body>
+</html>

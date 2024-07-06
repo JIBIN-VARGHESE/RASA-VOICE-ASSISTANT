@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-metric",
+      "2": "I-metric",
+      "3": "L-metric",
+      "4": "U-metric",
+      "5": "B-quarter",
+      "6": "I-quarter",
+      "7": "L-quarter",
+      "8": "U-quarter",
+      "9": "B-submetric",
+      "10": "I-submetric",
+      "11": "L-submetric",
+      "12": "U-submetric",
+      "13": "B-year",
+      "14": "I-year",
+      "15": "L-year",
+      "16": "U-year",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-metric": 1,
+      "I-metric": 2,
+      "L-metric": 3,
+      "U-metric": 4,
+      "B-quarter": 5,
+      "I-quarter": 6,
+      "L-quarter": 7,
+      "U-quarter": 8,
+      "B-submetric": 9,
+      "I-submetric": 10,
+      "L-submetric": 11,
+      "U-submetric": 12,
+      "B-year": 13,
+      "I-year": 14,
+      "L-year": 15,
+      "U-year": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]
